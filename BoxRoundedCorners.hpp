@@ -5,6 +5,12 @@
  * @brief 
  * @date 2019-04-25
  * 
+ * This code was originally modified from code provided as part of the TouchGFX 4.10.0 distribution.
+ * 
+ * This software component is licensed by ST under Ultimate Liberty license
+ * SLA0044, the "License"; You may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at:
+ *                             www.st.com/SLA0044
  */
 #ifndef BOX_ROUNDED_CORNERS_HPP_
 #define BOX_ROUNDED_CORNERS_HPP_
