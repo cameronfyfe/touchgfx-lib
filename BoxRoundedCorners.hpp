@@ -50,8 +50,6 @@ public:
         circleBL.setPainter(circlePainter);
 
         add(boxCenter);
-        add(boxTop);
-        add(boxBottom);
         add(boxLeft);
         add(boxRight);
 
@@ -103,8 +101,6 @@ public:
     {
         this->color = color;
         boxCenter.setColor(color);
-        boxTop.setColor(color);
-        boxBottom.setColor(color);
         boxLeft.setColor(color);
         boxRight.setColor(color);
         circlePainter.setColor(color);
@@ -119,8 +115,6 @@ public:
     {
         this->alpha = alpha;
         boxCenter.setAlpha(alpha);
-        boxTop.setAlpha(alpha);
-        boxBottom.setAlpha(alpha);
         boxLeft.setAlpha(alpha);
         boxRight.setAlpha(alpha);
         circleTL.setAlpha(alpha);
@@ -138,17 +132,9 @@ protected:
 
     void updateDimensions()
     {
-        boxCenter.setXY(cornerRadius, cornerRadius);
+        boxCenter.setXY(cornerRadius, 0);
         boxCenter.setWidth(rect.width-2*cornerRadius);
-        boxCenter.setHeight(rect.height-2*cornerRadius);
-
-        boxTop.setXY(cornerRadius, 0);
-        boxTop.setWidth(rect.width-2*cornerRadius);
-        boxTop.setHeight(cornerRadius);
-
-        boxBottom.setXY(cornerRadius, rect.height-cornerRadius);
-        boxBottom.setWidth(rect.width-2*cornerRadius);
-        boxBottom.setHeight(cornerRadius);
+        boxCenter.setHeight(rect.height);
 
         boxLeft.setXY(0, cornerRadius);
         boxLeft.setWidth(cornerRadius);
@@ -188,10 +174,8 @@ protected:
     colortype color;
     uint8_t alpha;
 
-    // Use 5 boxes intead of overlapping boxes so transparency works
+    // Use 3 boxes intead of overlapping boxes so transparency works
     Box boxCenter;
-    Box boxTop;
-    Box boxBottom;
     Box boxLeft;
     Box boxRight;
 
